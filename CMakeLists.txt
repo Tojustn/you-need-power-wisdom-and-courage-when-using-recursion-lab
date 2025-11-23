@@ -15,7 +15,7 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(Catch2)
 
-add_executable(trianglenumbercalculator_test tests/trainglenumbercalculator_test.cpp src/trianglenumbercalculator.cpp)
+add_executable(trianglenumbercalculator_test tests/trianglenumbercalculator_test.cpp src/trianglenumbercalculator.cpp)
 add_executable(main main.cpp src/trianglenumbercalculator.cpp)
 
 target_link_libraries(trianglenumbercalculator_test PRIVATE Catch2::Catch2WithMain)

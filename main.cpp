@@ -1,16 +1,30 @@
 #include <iostream>
 #include "src/trianglenumbercalculator.hpp"
-
+#include <vector>
 
 int main() {
   TriangleNumberCalculator calc = TriangleNumberCalculator();
 
-  std::cout << "value of 5:\t" << calc.value(5) << std::endl; 
+  int n = 4;
+  int m = 3;
 
+  std::cout << "Testing triangle number calculator with n=" << n << " and m=" << m << std::endl;
+  std::cout << "Value of " << n << ":\t" << calc.value(n) << std::endl;
+  std::cout << "Value of " << m << ":\t" << calc.value(m) << std::endl;
+  
+  std::cout << "\nAdd " << n << " and " << m << ":\t" << calc.add(n, m) << std::endl;
+  std::cout << "Subtract " << n << " and " << m << ":\t" << calc.subtract(n, m) << std::endl;
+  std::cout << "Multiply " << n << " and " << m << ":\t" << calc.multiply(n, m) << std::endl;
+  std::cout << "Divide " << n << " by " << m << ":\t" << calc.divide(n, m) << std::endl;
+  
+  std::cout << "\nSequence up to " << n << ": ";
+  std::vector<int> seq = calc.sequence(n);
+  for (size_t i = 0; i < seq.size(); i++) {
+    std::cout << seq[i];
+    if (i < seq.size() - 1) {
+      std::cout << ", ";
+    }
+  }
+  std::cout << std::endl;
 
-  std::cout << "value of 4:\t" << calc.value(4) << std::endl; 
-
-  std::cout << "add 5 and 4:\t" << calc.add(5,4) << std::endl; 
-
-  std::cout << "subtract 5 and 4:\t" << calc.subtract(5,4) << std::endl; 
 }
